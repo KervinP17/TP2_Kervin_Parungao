@@ -4,7 +4,7 @@ public class Visiteur {
     private int nombreAnimaux;
     private String[] especes;
 
-    public Visiteur(String nom, int age, int nombreAnimaux, String[] especes) {
+    public Visiteur(String nom, int age, String[] especes) {
         this.nom = nom;
         this.age = age;
         this.nombreAnimaux = nombreAnimaux;
@@ -19,7 +19,7 @@ public class Visiteur {
 
     }
 
-    public void entrerDansEnclos(Enclos enclo) {
+    public void entrerDansEnclo(Enclos enclo) {
 
     }
 
@@ -30,6 +30,8 @@ public class Visiteur {
     public void quitterEnclo(Enclos enclo) {
 
     }
+
+
 
     @Override
     public String toString() {

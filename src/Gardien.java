@@ -4,10 +4,9 @@ public class Gardien {
     private int id;
 
 
-    public Gardien(String nom, int competence, int id) {
+    public Gardien(String nom, int competence) {
         this.nom = nom;
         this.competence = competence;
-        this.id = id;
     }
 
 
@@ -15,5 +14,6 @@ public class Gardien {
 
     }
 
+    //toString
 
 }

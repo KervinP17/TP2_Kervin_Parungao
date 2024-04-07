@@ -1,7 +1,7 @@
 public class Enclos {
     private String nom;
     private int nombreAnimaux;
-    private int capaciteMax;
+    private int capaciteMax = 5; //?
     private Animal[] animaux;
     private Veterinaire veterinaire;
     private Gardien gardien;
