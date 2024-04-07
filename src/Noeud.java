@@ -25,5 +25,7 @@ public class Noeud {
     }
 
 
-
+    public Visiteur getValeur() {
+        return valeur;
+    }
 }

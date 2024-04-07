@@ -1,13 +1,15 @@
 public class Zoo {
     private String nom;
-    private Pile pileGardiens = new Pile();
-    private File fileVisiteurs = new File();
+    private Pile pileGardiens;
+    private File fileVisiteurs;
     private int nombreEnclos;
     private Enclos[] lesEnclos;
     private int nombreTotalAnimaux;
 
     public Zoo(String nom) {
         this.nom = nom;
+        pileGardiens = new Pile();
+        fileVisiteurs = new File();
     }
 
     //JUNIT?
@@ -30,13 +32,17 @@ public class Zoo {
     }
 
     public Visiteur retirerVisiteur() {
+        String tempNom = fileVisiteurs.getPremier().getValeur().getNom();
+        int tempAge = fileVisiteurs.getPremier().getValeur().getAge();
+        String[] tempEspece = fileVisiteurs.getPremier().getValeur().getEspeces();
+
         if (fileVisiteurs.getPremier() != null) {
             fileVisiteurs = null;
         }
         else {
             fileVisiteurs.setPremier(fileVisiteurs.getPremier().suivant);
         }
-        return new Visiteur(null, -1, null);
+        return new Visiteur(tempNom, tempAge,tempEspece);
     }
 
     public void arriveeVisiteur(Visiteur visiteur) {
@@ -79,6 +85,10 @@ public class Zoo {
 
     public void setPileGardiens(Pile pileGardiens) {
         this.pileGardiens = pileGardiens;
+    }
+
+    public void callVide() {
+        fileVisiteurs.estVide();
     }
 
     //toString

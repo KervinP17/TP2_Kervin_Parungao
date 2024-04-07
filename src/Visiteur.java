@@ -44,4 +44,8 @@ public class Visiteur {
     public int getAge() {
         return age;
     }
+
+    public String getNom() {
+        return nom;
+    }
 }

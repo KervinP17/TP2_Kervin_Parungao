@@ -4,12 +4,17 @@ public class File {
     private Noeud premier;
     private int nbElements;
 
-
     public boolean estVide() {
         if (premier.suivant == null) {
+            System.out.println("vide");
             return true;
+
         }
-        else return false;
+
+        else {
+            System.out.println("pas vide");
+            return false;
+        }
     }
 
     public int getNbElements() {
@@ -76,4 +81,14 @@ public class File {
 //    }
 
     //toString
+
+    public String toString() {
+        String str = "";
+        str += nbElements;
+        str += " noeuds: ";
+        for (Noeud courant = premier; courant != null; courant = courant.suivant)
+            str += courant.getValeur() + " -> ";
+        str += "[null]";
+        return str;
+    }
 }
