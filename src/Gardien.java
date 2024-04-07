@@ -12,7 +12,7 @@ public class Gardien {
         pointageTotalGardiens += competence;
         pileGardien.insererALaFin(this);
 
-        System.out.println("apile " + pileGardien);
+//        System.out.println("apile " + pileGardien);
     }
 
     public static int getCompteurGardiens() {
@@ -40,10 +40,7 @@ public class Gardien {
 
     @Override
     public String toString() {
-        return "Gardien{" +
-                "nom='" + nom + '\'' +
-                ", competence=" + competence +
-                '}';
+        return "[" + nom + ", " + competence + "] ";
     }
 
     //toString

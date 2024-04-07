@@ -17,11 +17,7 @@ public class Pile {
         System.out.println("actual gardien size rn is " + Gardien.getCompteurGardiens());
     }
 
-    public void afficher() {
-        for (int i = 0; i < getNbElements(); i++)
-            System.out.println("I" + i + ": " + getElement(i));
-        System.out.println("--------------------");
-    }
+
 
     public Gardien[] getGardiens() {
         return gardiens;
@@ -60,17 +56,39 @@ public class Pile {
         this.gardiens = gardiens;
     }
 
+    public void afficher() {
+        System.out.println("Voici la pile des gardiens:");
+        System.out.print( nbElements + " Gardiens (capacité " + capacite + "): " );
+        for (int i = 0; i < capacite; i++) {
+            if (getElement(i) != null) {
+                System.out.print(getElement(i));
+            }
+            else System.out.print("[null] ");
+        }
+        System.out.println("");
+
+    }
+
     @Override
     public String toString() {
-        return "Pile{" +
-                "gardiens=" + Arrays.toString(gardiens) +
-                '}';
+        String str = "Voici la pile des gardiens: \n" + nbElements + " Gardiens (capacité " + capacite + "): ";
+        for (int i = 0; i < capacite; i++) {
+            if (getElement(i) != null) {
+                str += getElement(i);
+            }
+            else str += "[null] ";
+        }
+        System.out.println("");
+
+        return str;
     }
 
     // toSring
 
 //    @Override
 //    public String toString() {
-//        return ;
+//        return "Pile{" +
+//                "gardiens=" + Arrays.toString(gardiens) +
+//                '}';
 //    }
 }
