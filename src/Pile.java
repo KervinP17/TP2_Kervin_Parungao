@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Pile {
     private final int TAILLE_INITIALE = 4;
     private final int RATIO_AGRANDISSEMENT = 2;
@@ -56,6 +58,13 @@ public class Pile {
 
     public void setGardiens(Gardien[] gardiens) {
         this.gardiens = gardiens;
+    }
+
+    @Override
+    public String toString() {
+        return "Pile{" +
+                "gardiens=" + Arrays.toString(gardiens) +
+                '}';
     }
 
     // toSring

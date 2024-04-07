@@ -9,7 +9,7 @@ public class Zoo {
     public Zoo(String nom) {
         this.nom = nom;
         fileVisiteurs = new File();
-        pileGardiens = new Pile();
+        pileGardiens = Gardien.pileGardien;
         pileGardiens.afficher();
     }
 
@@ -64,18 +64,18 @@ public class Zoo {
     }
 
     public void ajouterGardien(Gardien gardien) {
-//        pileGardiens.insererALaFin(gardien);
+        pileGardiens.insererALaFin(gardien);
     }
 
     public Gardien retirerGardien() {
         int pointTotal = 0;
 
-        for (int i = 0; i < pileGardiens.getGardiens().length; i++) {
+        for (int i = 0; i < pileGardiens.getNbElements(); i++) {
             pointTotal += pileGardiens.getGardiens()[i].getCompetence();
         }
 
         for (int i = pileGardiens.getNbElements(); i > 0; i--) {
-            if ( pointTotal - pileGardiens.getElement(pileGardiens.getNbElements()).getCompetence() > 20 ) {
+            if ( pointTotal - pileGardiens.getElement(i - 1).getCompetence() < 20 ) {
                 pileGardiens.setNbElements(pileGardiens.getNbElements() - 1);
 
             }
