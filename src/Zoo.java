@@ -22,4 +22,18 @@ public class Zoo {
     public Visiteur retirerVisiteur() {
 
     }
+
+    public void arriveeVisiteur(Visiteur visiteur) {
+
+    }
+
+    public void ajouterGardien(Gardien gardien) {
+
+    }
+
+    public Gardien retirerGardien() {
+
+    }
+
+    //toString
 }
