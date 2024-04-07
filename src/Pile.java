@@ -1,7 +1,7 @@
 public class Pile {
     private final int TAILLE_INITIALE = 4;
     private final int RATIO_AGRANDISSEMENT = 2;
-    private Gardien[] gardiens;
+    private Gardien[] gardiens = new Gardien[5];
     private int nbElements;
     private int capacite;
 
@@ -36,6 +36,10 @@ public class Pile {
             temp[i] = gardiens[i];
         }
         gardiens = temp;
+    }
+
+    public void setGardiens(Gardien[] gardiens) {
+        this.gardiens = gardiens;
     }
 
     // toSring

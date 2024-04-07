@@ -7,6 +7,8 @@ public class Gardien {
     public Gardien(String nom, int competence) {
         this.nom = nom;
         this.competence = competence;
+
+        compteurGardiens++;
     }
 
 
@@ -17,6 +19,8 @@ public class Gardien {
     public int getCompetence() {
         return competence;
     }
+
+    public static int compteurGardiens = 0;
 
     //toString
 

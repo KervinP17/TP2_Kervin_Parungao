@@ -1,7 +1,9 @@
+import java.util.Arrays;
+
 public class Zoo {
     private String nom;
-    private Pile pileGardiens;
-    private File fileVisiteurs;
+    private Pile pileGardiens = new Pile();
+    private File fileVisiteurs = new File();
     private int nombreEnclos;
     private Enclos[] lesEnclos;
     private int nombreTotalAnimaux;
@@ -12,14 +14,21 @@ public class Zoo {
 
     //JUNIT?
     public boolean ajouterEnclos(Enclos[] lesEnclos) {
+
+        System.out.println(Arrays.toString(pileGardiens.getGardiens()));
+
         int pointTotal = 0;
 
-
+        for (int i = 0; i < 5; i++) {
+            pileGardiens.insererFin(pileGardiens.getElement(i));
+        }
 
         for (int i = 0; i < pileGardiens.getNbElements(); i++) {
             pointTotal += pileGardiens.getGardiens()[i].getCompetence();
         }
+        System.out.println("point total is " + pointTotal);
         if (pointTotal < 20) {
+
             return false;
         }
         for (int i = 0; i < Classe.values().length; i++) {
