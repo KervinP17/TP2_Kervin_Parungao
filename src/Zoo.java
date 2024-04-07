@@ -8,15 +8,16 @@ public class Zoo {
 
     public Zoo(String nom) {
         this.nom = nom;
-        pileGardiens = new Pile();
         fileVisiteurs = new File();
+        pileGardiens = new Pile();
+        pileGardiens.afficher();
     }
 
     //JUNIT?
     public boolean ajouterEnclos(Enclos[] lesEnclos) {
 
 //        int pointTotal = 0;
-//
+
 //        for (int i = 0; i < pileGardiens.getNbElements(); i++) {
 //            pointTotal += pileGardiens.getGardiens()[i].getCompetence();
 //        }
@@ -25,9 +26,16 @@ public class Zoo {
 //
 //            return false;
 //        }
-//        for (int i = 0; i < Classe.values().length; i++) {
-//            lesEnclos[i] = this.lesEnclos[i];
-//        }
+
+        System.out.println("point total is " + Gardien.getPointageTotalGardiens());
+        if ( Gardien.getPointageTotalGardiens() < 20 ) {
+            return false;
+        }
+
+        this.lesEnclos = lesEnclos;
+        for (int i = 0; i < Classe.values().length; i++) {
+            lesEnclos[i] = this.lesEnclos[i];
+        }
         return true;
     }
 
@@ -60,18 +68,18 @@ public class Zoo {
     }
 
     public Gardien retirerGardien() {
-//        int pointTotal = 0;
-//
-//        for (int i = 0; i < pileGardiens.getGardiens().length; i++) {
-//            pointTotal += pileGardiens.getGardiens()[i].getCompetence();
-//        }
-//
-//        for (int i = pileGardiens.getNbElements(); i > 0; i--) {
-//            if ( pointTotal - pileGardiens.getElement(pileGardiens.getNbElements()).getCompetence() > 20 ) {
-//                pileGardiens.setNbElements(pileGardiens.getNbElements() - 1);
-//
-//            }
-//        }
+        int pointTotal = 0;
+
+        for (int i = 0; i < pileGardiens.getGardiens().length; i++) {
+            pointTotal += pileGardiens.getGardiens()[i].getCompetence();
+        }
+
+        for (int i = pileGardiens.getNbElements(); i > 0; i--) {
+            if ( pointTotal - pileGardiens.getElement(pileGardiens.getNbElements()).getCompetence() > 20 ) {
+                pileGardiens.setNbElements(pileGardiens.getNbElements() - 1);
+
+            }
+        }
         return null;
     }
 
@@ -81,6 +89,10 @@ public class Zoo {
 
     public void setPileGardiens(Pile pileGardiens) {
         this.pileGardiens = pileGardiens;
+    }
+
+    public Pile getPileGardiens() {
+        return pileGardiens;
     }
 
     //toString

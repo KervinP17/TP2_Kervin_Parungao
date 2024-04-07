@@ -35,10 +35,7 @@ public class Visiteur {
 
     @Override
     public String toString() {
-        return "Visiteur{" +
-                "nom='" + nom + '\'' +
-                ", age=" + age +
-                '}';
+        return "[" + nom + ", " + age + "]";
     }
 
     public int getAge() {

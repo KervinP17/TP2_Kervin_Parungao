@@ -82,12 +82,19 @@ public class File {
 
     //toString
 
+//    public String toString() {
+//        String str = "";
+//        for (Noeud courant = premier; courant != null; courant = courant.suivant)
+//            str += courant.getValeur() + " -> ";
+//        str += "[null]";
+//        return str;
+//    }
+
     public String toString() {
-        String str = "";
-        str += nbElements;
+        StringBuilder str = new StringBuilder();
         for (Noeud courant = premier; courant != null; courant = courant.suivant)
-            str += courant.getValeur() + " -> ";
-        str += "[null]";
-        return str;
+            str.append(courant.getValeur()).append(" -> ");
+        str.append("[null]");
+        return str.toString();
     }
 }

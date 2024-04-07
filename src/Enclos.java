@@ -14,6 +14,9 @@ public class Enclos {
     }
 
     public Gardien getGardien() {
+        if ( gardien == null ) {
+            return null;
+        }
         return gardien;
     }
 

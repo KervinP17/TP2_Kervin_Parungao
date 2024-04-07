@@ -16,13 +16,13 @@ public class Noeud {
     }
 
     //unfinished toString
-    @Override
-    public String toString() {
-        return "Noeud[" +
-                "valeur='" + valeur + '\'' +
-                ", suivant=" + suivant +
-                ']';
-    }
+//    @Override
+//    public String toString() {
+//        return "Noeud[" +
+//                "valeur='" + valeur + '\'' +
+//                ", suivant=" + suivant +
+//                ']';
+//    }
 
 
     public Visiteur getValeur() {
