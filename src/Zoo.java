@@ -21,7 +21,7 @@ public class Zoo {
 //            pointTotal += pileGardiens.getGardiens()[i].getCompetence();
 //        }
 //        System.out.println("point total is " + pointTotal);
-//        if (pointTotal < 20) {
+//        if ( pointTotal < 20 ) {
 //
 //            return false;
 //        }
@@ -36,29 +36,23 @@ public class Zoo {
         int tempAge = fileVisiteurs.getPremier().getValeur().getAge();
         String[] tempEspece = fileVisiteurs.getPremier().getValeur().getEspeces();
 
-        if (fileVisiteurs.getPremier() != null) {
-            fileVisiteurs = null;
-        }
-        else {
-            fileVisiteurs.setPremier(fileVisiteurs.getPremier().suivant);
-        }
-
+        fileVisiteurs.setPremier(fileVisiteurs.getPremier().suivant);
         return new Visiteur(tempNom, tempAge,tempEspece);
     }
 
     public void arriveeVisiteur(Visiteur visiteur) {
-//        if ( visiteur.getAge() >= 65 ) {
-//            for (int i = 0; i < fileVisiteurs.getNbElements(); i++) {
-//                if ( visiteur.getAge() <= 65 ) {
-//                    fileVisiteurs.insererAuMilieu(visiteur, i);
-//                }
-//            }
-//        }
-//        else {
+        if ( visiteur.getAge() >= 65 ) {
+            for (int i = 0; i < fileVisiteurs.getNbElements(); i++) {
+                if ( fileVisiteurs.getNoeud(i).getValeur().getAge() < 65 ) {
+                    fileVisiteurs.insererAuMilieu(visiteur, i);
+                    break;
+                }
+            }
+        }
+        else {
             fileVisiteurs.insererALaFin(visiteur);
-
-            System.out.println(fileVisiteurs);
-//        }
+        }
+        System.out.println(fileVisiteurs); // printVisiteurs//////////////////////////////////////
     }
 
     public void ajouterGardien(Gardien gardien) {
@@ -73,7 +67,7 @@ public class Zoo {
 //        }
 //
 //        for (int i = pileGardiens.getNbElements(); i > 0; i--) {
-//            if (pointTotal - pileGardiens.getElement(pileGardiens.getNbElements()).getCompetence() > 20) {
+//            if ( pointTotal - pileGardiens.getElement(pileGardiens.getNbElements()).getCompetence() > 20 ) {
 //                pileGardiens.setNbElements(pileGardiens.getNbElements() - 1);
 //
 //            }
@@ -82,15 +76,11 @@ public class Zoo {
     }
 
     public File getFileVisiteurs() {
-        return new File();
+        return fileVisiteurs;
     }
 
     public void setPileGardiens(Pile pileGardiens) {
         this.pileGardiens = pileGardiens;
-    }
-
-    public void callVide() {
-        fileVisiteurs.estVide();
     }
 
     //toString

@@ -34,7 +34,7 @@ public class Pile {
     }
 
     public int insererALaFin(Gardien gardien) {
-        if (nbElements == capacite) {
+        if ( nbElements == capacite ) {
             agrandir();
         }
         gardiens[nbElements] = gardien;

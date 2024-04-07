@@ -5,7 +5,7 @@ public class File {
     private int nbElements;
 
     public boolean estVide() {
-        if (premier.suivant == null) {
+        if ( premier == null ) {
             System.out.println("vide");
             return true;
 
@@ -29,8 +29,8 @@ public class File {
         this.premier = premier;
     }
 
-    private Noeud getNoeud(int index) {
-        if (index < 0 || index >= nbElements) {
+    public Noeud getNoeud(int index) {
+        if ( index < 0 || index >= nbElements ) {
             return null;
         }
         Noeud courant = premier;
@@ -48,7 +48,7 @@ public class File {
     }
 
     public int insererALaFin(Visiteur valeur) {
-        if (premier == null) {
+        if ( premier == null ) {
             return insererAuDebut(valeur);
         }
 
@@ -61,31 +61,30 @@ public class File {
         courant.setSuivant(nouveau);
         return ++nbElements;
     }
-//    public int insererAuMilieu(Visiteur valeur, int index) {
-//        if (index == 0) {
-//            return insererAuDebut(valeur);
-//        }
-//        else if (index == nbElements) {
-//            return insererALaFin(valeur);
-//        }
-//        Noeud avant = getNoeud(index - 1);
-//        if (avant == null) {
-//            return -1;
-//        }
-//
-//        Noeud apres = avant.suivant;
-//        Noeud nouveau = new Noeud(valeur);
-//        avant.setSuivant(nouveau);
-//        nouveau.setSuivant(apres);
-//        return ++nbElements;
-//    }
+    public int insererAuMilieu(Visiteur valeur, int index) {
+        if ( index == 0 ) {
+            return insererAuDebut(valeur);
+        }
+        else if ( index == nbElements ) {
+            return insererALaFin(valeur);
+        }
+        Noeud avant = getNoeud(index - 1);
+        if ( avant == null ) {
+            return -1;
+        }
+
+        Noeud apres = avant.suivant;
+        Noeud nouveau = new Noeud(valeur);
+        avant.setSuivant(nouveau);
+        nouveau.setSuivant(apres);
+        return ++nbElements;
+    }
 
     //toString
 
     public String toString() {
         String str = "";
         str += nbElements;
-        str += " noeuds: ";
         for (Noeud courant = premier; courant != null; courant = courant.suivant)
             str += courant.getValeur() + " -> ";
         str += "[null]";

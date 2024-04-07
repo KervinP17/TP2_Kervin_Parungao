@@ -18,10 +18,10 @@ public class Noeud {
     //unfinished toString
     @Override
     public String toString() {
-        return "Noeud{" +
+        return "Noeud[" +
                 "valeur='" + valeur + '\'' +
                 ", suivant=" + suivant +
-                '}';
+                ']';
     }
 
 
