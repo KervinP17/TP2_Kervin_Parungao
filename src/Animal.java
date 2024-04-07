@@ -27,7 +27,6 @@ public class Animal {
             case "piscivore":
                 besoinAlimentaire = poids * 0.01;
                 break;
-
         }
     }
 
@@ -41,6 +40,16 @@ public class Animal {
 
     public double getBesoinAlimentaire() {
         return besoinAlimentaire;
+    }
+
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "nom='" + nom + '\'' +
+                ", poids=" + poids +
+                ", espece='" + espece + '\'' +
+                ", besoinAlimentaire=" + besoinAlimentaire +
+                '}';
     }
 
     //toString

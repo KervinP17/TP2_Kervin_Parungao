@@ -27,7 +27,7 @@ public class Enclos {
     }
 
     public void ajouterAnimaux(Animal[] lesAnimaux) {
-
+        animaux = lesAnimaux;
     }
 
     public int getNombreAnimaux() {
