@@ -40,4 +40,8 @@ public class Visiteur {
                 ", age=" + age +
                 '}';
     }
+
+    public int getAge() {
+        return age;
+    }
 }

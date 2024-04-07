@@ -1,6 +1,19 @@
 public class Noeud {
-    private String valeur;
+    private Visiteur valeur;
     public Noeud suivant;
+
+    public Noeud(Visiteur pValeur) {
+        valeur = pValeur;
+        suivant = null;
+    }
+
+    public Noeud getSuivant() {
+        return suivant;
+    }
+
+    public void setSuivant(Noeud suivant) {
+        this.suivant = suivant;
+    }
 
     //unfinished toString
     @Override
@@ -10,4 +23,7 @@ public class Noeud {
                 ", suivant=" + suivant +
                 '}';
     }
+
+
+
 }

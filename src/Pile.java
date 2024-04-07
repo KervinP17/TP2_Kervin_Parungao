@@ -1,9 +1,21 @@
 public class Pile {
     private final int TAILLE_INITIALE = 4;
     private final int RATIO_AGRANDISSEMENT = 2;
-    private Gardien[] gardiens = new Gardien[5];
+    private Gardien[] gardiens;
     private int nbElements;
     private int capacite;
+
+    public Pile() {
+        gardiens = new Gardien[TAILLE_INITIALE];
+        nbElements = 0;
+        capacite = TAILLE_INITIALE;
+    }
+
+    public void afficher() {
+        for (int i = 0; i < getNbElements(); i++)
+            System.out.println("I" + i + ": " + getElement(i));
+        System.out.println("--------------------");
+    }
 
     public Gardien[] getGardiens() {
         return gardiens;
@@ -21,7 +33,7 @@ public class Pile {
         this.nbElements = nbElements;
     }
 
-    public int insererFin(Gardien gardien) {
+    public int insererALaFin(Gardien gardien) {
         if (nbElements == capacite) {
             agrandir();
         }
