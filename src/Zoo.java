@@ -42,6 +42,7 @@ public class Zoo {
         else {
             fileVisiteurs.setPremier(fileVisiteurs.getPremier().suivant);
         }
+
         return new Visiteur(tempNom, tempAge,tempEspece);
     }
 
@@ -55,6 +56,8 @@ public class Zoo {
 //        }
 //        else {
             fileVisiteurs.insererALaFin(visiteur);
+
+            System.out.println(fileVisiteurs);
 //        }
     }
 
@@ -79,8 +82,7 @@ public class Zoo {
     }
 
     public File getFileVisiteurs() {
-
-        return fileVisiteurs;
+        return new File();
     }
 
     public void setPileGardiens(Pile pileGardiens) {
