@@ -18,4 +18,8 @@ public class Zoo {
     public boolean ajouterEnclos(Enclos[] lesEnclos) {
 
     }
+
+    public Visiteur retirerVisiteur() {
+
+    }
 }
