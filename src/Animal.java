@@ -4,7 +4,7 @@ public class Animal {
     private double poids;
     private Classe classe;
     private String espece;
-    private int besoinAlimentaire;
+    private double besoinAlimentaire;
 
 
     public Animal(String nom, String regimeAlimentaire, double poids, Classe classe, String espece) {
@@ -13,6 +13,22 @@ public class Animal {
         this.poids = poids;
         this.classe = classe;
         this.espece = espece;
+
+        switch (regimeAlimentaire) {
+            case "carnivore":
+                besoinAlimentaire = poids * 0.05;
+                break;
+            case "herbivore":
+                besoinAlimentaire = poids * 0.03;
+                break;
+            case "omnivore":
+                besoinAlimentaire = poids * 0.02;
+                break;
+            case "piscivore":
+                besoinAlimentaire = poids * 0.01;
+                break;
+
+        }
     }
 
     public String getEspece() {
@@ -23,7 +39,7 @@ public class Animal {
         return poids;
     }
 
-    public int getBesoinAlimentaire() {
+    public double getBesoinAlimentaire() {
         return besoinAlimentaire;
     }
 

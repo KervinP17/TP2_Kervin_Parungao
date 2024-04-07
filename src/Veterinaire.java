@@ -11,5 +11,10 @@ public class Veterinaire {
 
     }
 
+    @Override
+    public String toString() {
+        return "[" + nom + ", " + specialite + "]";
+    }
+
     //toString
 }

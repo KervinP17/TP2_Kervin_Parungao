@@ -82,19 +82,19 @@ public class File {
 
     //toString
 
-//    public String toString() {
-//        String str = "";
-//        for (Noeud courant = premier; courant != null; courant = courant.suivant)
-//            str += courant.getValeur() + " -> ";
-//        str += "[null]";
-//        return str;
-//    }
-
     public String toString() {
-        StringBuilder str = new StringBuilder();
+        String str = "\nEt la file des visiteurs:\n";
         for (Noeud courant = premier; courant != null; courant = courant.suivant)
-            str.append(courant.getValeur()).append(" -> ");
-        str.append("[null]");
-        return str.toString();
+            str += courant.getValeur() + " -> ";
+        str += "[null]";
+        return str;
     }
+
+//    public String toString() {
+//        StringBuilder str = new StringBuilder();
+//        for (Noeud courant = premier; courant != null; courant = courant.suivant)
+//            str.append(courant.getValeur()).append(" -> ");
+//        str.append("[null]");
+//        return str.toString();
+//    }
 }

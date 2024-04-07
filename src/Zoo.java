@@ -101,7 +101,7 @@ public class Zoo {
 
     @Override
     public String toString() {
-        return pileGardiens + "\nEt la file des visiteurs: \n" + fileVisiteurs + ", nombreEnclos=" + nombreEnclos + ", lesEnclos=" + Arrays.toString(lesEnclos) + '}';
+        return pileGardiens + "a: " + fileVisiteurs + ", nombreEnclos=" + nombreEnclos + ", lesEnclos=" + Arrays.toString(lesEnclos) + '}';
     }
 
     //toString

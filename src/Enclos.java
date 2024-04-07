@@ -1,7 +1,9 @@
+import java.util.Arrays;
+
 public class Enclos {
     private String nom;
     private int nombreAnimaux;
-    private int capaciteMax; //?
+    private int capaciteMax;
     private Animal[] animaux;
     private Veterinaire veterinaire;
     private Gardien gardien;
@@ -34,6 +36,18 @@ public class Enclos {
 
     public Animal[] getAnimaux() {
         return animaux;
+    }
+
+    @Override
+    public String toString() {
+        return "Enclos{" +
+                "nom='" + nom + '\'' +
+                ", nombreAnimaux=" + nombreAnimaux +
+                ", capaciteMax=" + capaciteMax +
+                ", animaux=" + Arrays.toString(animaux) +
+                ", veterinaire=" + veterinaire +
+                ", gardien=" + gardien +
+                '}';
     }
 
     //toString
