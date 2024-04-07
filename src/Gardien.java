@@ -14,6 +14,10 @@ public class Gardien {
 
     }
 
+    public int getCompetence() {
+        return competence;
+    }
+
     //toString
 
 }

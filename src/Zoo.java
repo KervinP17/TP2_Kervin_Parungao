@@ -12,9 +12,20 @@ public class Zoo {
 
     //JUNIT?
     public boolean ajouterEnclos(Enclos[] lesEnclos) {
+        int pointTotal = 0;
+
+        for (int i = 0; i < pileGardiens; i++) {
+
+        }
+
         for (int i = 0; i < Classe.values().length; i++) {
             lesEnclos[i] = this.lesEnclos[i];
+
         }
+        if () {
+            return false;
+        }
+        return true;
     }
 
     public Visiteur retirerVisiteur() {

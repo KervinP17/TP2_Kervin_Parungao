@@ -2,7 +2,7 @@ public class Noeud {
     private String valeur;
     public Noeud suivant;
 
-    //unfinished
+    //unfinished toString
     @Override
     public String toString() {
         return "Noeud{" +
