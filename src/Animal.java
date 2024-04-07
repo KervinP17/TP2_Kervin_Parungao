@@ -3,7 +3,7 @@ public class Animal {
     private int poids;
 
 //    private ??? regimeAlimentaire;
-    private String classe;
+    private Classe classe;
     private String espece;
 //    private ??? besoinAlimentaire;
 }
