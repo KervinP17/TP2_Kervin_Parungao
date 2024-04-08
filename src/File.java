@@ -1,5 +1,3 @@
-import javax.swing.plaf.basic.BasicDesktopPaneUI;
-
 public class File {
     private Noeud premier;
     private int nbElements;
@@ -8,9 +6,7 @@ public class File {
         if ( premier == null ) {
             System.out.println("vide");
             return true;
-
         }
-
         else {
             System.out.println("pas vide");
             return false;
@@ -27,6 +23,9 @@ public class File {
 
     public void setPremier(Noeud premier) {
         this.premier = premier;
+    }
+    public void setNbElements(int nbElements) {
+        this.nbElements = nbElements;
     }
 
     public Noeud getNoeud(int index) {
@@ -61,34 +60,36 @@ public class File {
         courant.setSuivant(nouveau);
         return ++nbElements;
     }
-    public int insererAuMilieu(Visiteur valeur, int index) {
+    public void insererAuMilieu(Visiteur valeur, int index) {
         if ( index == 0 ) {
-            return insererAuDebut(valeur);
+            insererAuDebut(valeur);
+            return;
         }
         else if ( index == nbElements ) {
-            return insererALaFin(valeur);
+            insererALaFin(valeur);
+            return;
         }
         Noeud avant = getNoeud(index - 1);
         if ( avant == null ) {
-            return -1;
-        }
+            return;
+        } // redundant??????????????????????????????????????????????????????????????
 
         Noeud apres = avant.suivant;
         Noeud nouveau = new Noeud(valeur);
         avant.setSuivant(nouveau);
         nouveau.setSuivant(apres);
-        return ++nbElements;
+        ++nbElements;
     }
 
-    //toString
-
     public String toString() {
-        String str = "\nEt la file des visiteurs:\n";
+        String str = "\nEt la file des visiteurs:\n" + nbElements + " visiteurs: ";
         for (Noeud courant = premier; courant != null; courant = courant.suivant)
             str += courant.getValeur() + " -> ";
         str += "[null]";
         return str;
     }
+
+
 
 //    public String toString() {
 //        StringBuilder str = new StringBuilder();

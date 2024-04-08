@@ -6,6 +6,7 @@ public class Animal {
     private String espece;
     private double besoinAlimentaire;
 
+    private static int nbAnimalTotal = 0;
 
     public Animal(String nom, String regimeAlimentaire, double poids, Classe classe, String espece) {
         this.nom = nom;
@@ -28,6 +29,11 @@ public class Animal {
                 besoinAlimentaire = poids * 0.01;
                 break;
         }
+        nbAnimalTotal++;
+    }
+
+    public static int getNbAnimalTotal() {
+        return nbAnimalTotal;
     }
 
     public String getEspece() {
@@ -50,6 +56,18 @@ public class Animal {
                 ", espece='" + espece + '\'' +
                 ", besoinAlimentaire=" + besoinAlimentaire +
                 '}';
+    }
+
+    public void setPoids(double poids) {
+        this.poids = poids;
+    }
+
+    public String getRegimeAlimentaire() {
+        return regimeAlimentaire;
+    }
+
+    public void setRegimeAlimentaire(String regimeAlimentaire) {
+        this.regimeAlimentaire = regimeAlimentaire;
     }
 
     //toString

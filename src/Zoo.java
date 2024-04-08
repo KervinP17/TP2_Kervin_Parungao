@@ -6,15 +6,16 @@ public class Zoo {
     private File fileVisiteurs;
     private int nombreEnclos;
     private Enclos[] lesEnclos;
-    private int nombreTotalAnimaux;
+    private int nombreTotalAnimaux = Animal.getNbAnimalTotal();
 
     public Zoo(String nom) {
         this.nom = nom;
         fileVisiteurs = new File();
         pileGardiens = Gardien.pileGardien;
 //        pileGardiens.afficher();
-        System.out.println(pileGardiens);
-
+//        System.out.println(pileGardiens);
+//        System.out.println(fileVisiteurs);
+        System.out.println(this); //temp=======================================================================
     }
 
     //JUNIT?
@@ -39,6 +40,7 @@ public class Zoo {
         this.lesEnclos = lesEnclos;
         for (int i = 0; i < Classe.values().length; i++) {
             lesEnclos[i] = this.lesEnclos[i];
+            nombreEnclos++;
         }
         return true;
     }
@@ -49,6 +51,7 @@ public class Zoo {
         String[] tempEspece = fileVisiteurs.getPremier().getValeur().getEspeces();
 
         fileVisiteurs.setPremier(fileVisiteurs.getPremier().suivant);
+        fileVisiteurs.setNbElements(fileVisiteurs.getNbElements() - 1);
         return new Visiteur(tempNom, tempAge,tempEspece);
     }
 
@@ -64,7 +67,7 @@ public class Zoo {
         else {
             fileVisiteurs.insererALaFin(visiteur);
         }
-        System.out.println(fileVisiteurs); // printVisiteurs//////////////////////////////////////
+//        System.out.println(fileVisiteurs); // printVisiteurs//////////////////////////////////////
     }
 
     public void ajouterGardien(Gardien gardien) {
@@ -101,7 +104,7 @@ public class Zoo {
 
     @Override
     public String toString() {
-        return pileGardiens + "a: " + fileVisiteurs + ", nombreEnclos=" + nombreEnclos + ", lesEnclos=" + Arrays.toString(lesEnclos) + '}';
+        return "" + pileGardiens + fileVisiteurs + "\n" + "Le zoo est peuplé avec " + nombreTotalAnimaux + " animaux. Il y a " + nombreEnclos + " enclos" + ", lesEnclos=" + Arrays.toString(lesEnclos) + '}';
     }
 
     //toString

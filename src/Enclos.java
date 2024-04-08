@@ -38,17 +38,23 @@ public class Enclos {
         return animaux;
     }
 
+//    @Override
+//    public String toString() {
+//        return "Enclos{" +
+//                "nom='" + nom + '\'' +
+//                ", nombreAnimaux=" + nombreAnimaux +
+//                ", capaciteMax=" + capaciteMax +
+//                ", animaux=" + Arrays.toString(animaux) +
+//                ", veterinaire=" + veterinaire +
+//                ", gardien=" + gardien +
+//                '}';
+//    }
     @Override
     public String toString() {
-        return "Enclos{" +
-                "nom='" + nom + '\'' +
-                ", nombreAnimaux=" + nombreAnimaux +
-                ", capaciteMax=" + capaciteMax +
-                ", animaux=" + Arrays.toString(animaux) +
-                ", veterinaire=" + veterinaire +
-                ", gardien=" + gardien +
-                '}';
+        return "Enclos{" + "nom='" + nom + '\'' + ", nombreAnimaux=" + nombreAnimaux + ", capaciteMax=" + capaciteMax + ", animaux=" + Arrays.toString(animaux) + ", veterinaire=" + veterinaire + ", gardien=" + gardien + '}';
     }
+
+
 
     //toString
 

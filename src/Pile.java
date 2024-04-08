@@ -12,12 +12,10 @@ public class Pile {
         nbElements = 0;
         capacite = TAILLE_INITIALE;
 
-        System.out.println("size of guardisands is " + gardiens.length);
-        System.out.println("gardien 1 is " + gardiens[0]);
-        System.out.println("actual gardien size rn is " + Gardien.getCompteurGardiens());
+//        System.out.println("size of guardisands is " + gardiens.length);
+//        System.out.println("gardien 1 is " + gardiens[0]);
+//        System.out.println("actual gardien size rn is " + Gardien.getCompteurGardiens());
     }
-
-
 
     public Gardien[] getGardiens() {
         return gardiens;

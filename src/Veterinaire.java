@@ -8,7 +8,7 @@ public class Veterinaire {
     }
 
     public void soignerAnimal(Animal animal) {
-
+        animal.getRegimeAlimentaire();
     }
 
     @Override

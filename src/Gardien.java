@@ -28,7 +28,16 @@ public class Gardien {
     }
 
     public void entrainerAnimal(Animal animal, double temps) {
-
+        double poids = animal.getPoids();
+        if ( temps < 10 ) {
+            animal.setPoids(poids * 1.01);
+        }
+        else if ( temps > 10 && temps < 30) {
+            animal.setPoids(poids * 0.98);
+        }
+        else {
+            animal.setPoids(poids * 0.95);
+        }
     }
 
     public int getCompetence() {
