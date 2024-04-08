@@ -48,16 +48,6 @@ public class Animal {
         return besoinAlimentaire;
     }
 
-    @Override
-    public String toString() {
-        return "Animal{" +
-                "nom='" + nom + '\'' +
-                ", poids=" + poids +
-                ", espece='" + espece + '\'' +
-                ", besoinAlimentaire=" + besoinAlimentaire +
-                '}';
-    }
-
     public void setPoids(double poids) {
         this.poids = poids;
     }
@@ -69,6 +59,9 @@ public class Animal {
     public void setRegimeAlimentaire(String regimeAlimentaire) {
         this.regimeAlimentaire = regimeAlimentaire;
     }
-
+    @Override
+    public String toString() {
+        return "-----Le " + espece + " nommé " + nom + " pèse " + poids + " kg et son besoin alimentaire " + besoinAlimentaire + " de " + regimeAlimentaire + "\n";
+    }
     //toString
 }

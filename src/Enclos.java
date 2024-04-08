@@ -39,6 +39,7 @@ public class Enclos {
         return animaux;
     }
 
+
 //    @Override
 //    public String toString() {
 //        return "Enclos{" +
@@ -50,13 +51,18 @@ public class Enclos {
 //                ", gardien=" + gardien +
 //                '}';
 //    }
+//    @Override
+//    public String toString() {
+//        return "Enclos{" + "nom='" + nom + '\'' + ", nombreAnimaux=" + nombreAnimaux + ", capaciteMax=" + capaciteMax + ", animaux=" + Arrays.toString(animaux) + ", veterinaire=" + veterinaire + ", gardien=" + gardien + '}';
+//    }
     @Override
     public String toString() {
-        return "Enclos{" + "nom='" + nom + '\'' + ", nombreAnimaux=" + nombreAnimaux + ", capaciteMax=" + capaciteMax + ", animaux=" + Arrays.toString(animaux) + ", veterinaire=" + veterinaire + ", gardien=" + gardien + '}';
+        return "L'enclos '" + nom + "' est peuplé avec " + nombreAnimaux + " animaux. Sa capacité est de " + capaciteMax + ". Le veterinaire assigné est " + veterinaire + ". Le gardien actuel est " + gardien + ".\n" + "Les animaux dans cet enclos:\n" + Arrays.toString(animaux);
     }
 
-
-
+    public String getNom() {
+        return nom;
+    }
     //toString
 
 }
