@@ -16,11 +16,11 @@ public class Visiteur {
     }
 
     public void entrerDansZoo(Zoo zoo) {
-        System.out.println(this.nom + " entre dans le zoo " + zoo);
+        System.out.println(this.nom + " entre dans le zoo '" + zoo.getNom() + "'");
     }
 
     public void entrerDansEnclo(Enclos enclo) {
-
+        System.out.println(this.nom + " entre dans l'enclos '" + enclo.getNom() + "'" );
     }
 
     public void quitterZoo() {

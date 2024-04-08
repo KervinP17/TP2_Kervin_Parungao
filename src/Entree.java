@@ -6,19 +6,24 @@ public class Entree {
     public Entree(Visiteur visiteur, Zoo zoo) {
         lesEnclos = new Enclos[zoo.getNombreEnclos()];
         System.out.println(visiteur + " achète son billet.");
-        prix = 10;
+        prix = 0;
 
         for (int i = 0; i < zoo.getNombreEnclos(); i++) {
             for (int j = 0; j < zoo.getLesEnclos()[i].getAnimaux().length; j++) {
-//                System.out.println(zoo.getLesEnclos()[i].getAnimaux()[j].toString());
+//                System.out.println(zoo.getLesEnclos()[i].getAnimaux()[j]);
                 for (int k = 0; k < visiteur.getEspeces().length; k++) {
                     if (visiteur.getEspeces()[k].equals(zoo.getLesEnclos()[i].getAnimaux()[j].getEspece())) {
-                        System.out.println( visiteur.getEspeces()[k] + " == " + zoo.getLesEnclos()[i].getAnimaux()[j].getEspece() + " that is inside " + zoo.getLesEnclos()[i] );
-                        nombreEnclos++;
+                        System.out.println( visiteur.getEspeces()[k] + " == " + zoo.getLesEnclos()[i].getAnimaux()[j].getEspece() + " that is inside " + zoo.getLesEnclos()[i].getNom() );
+                        System.out.println("number of animals inside enclos: " + zoo.getLesEnclos()[i].getNombreAnimaux());
+
                         for (int l = 0; l < zoo.getNombreEnclos(); l++) {
-                            if (lesEnclos[l] == null) {
+                            if (lesEnclos[l] == zoo.getLesEnclos()[i]) {
+                                break;
+                            }
+                            else if (lesEnclos[l] == null) {
                                 lesEnclos[l] = zoo.getLesEnclos()[i];
-                                prix += lesEnclos[l].getNombreAnimaux();
+                                prix += lesEnclos[l].getNombreAnimaux() + 10;
+                                nombreEnclos++;
                                 break;
                             }
 
@@ -29,12 +34,6 @@ public class Entree {
                 }
             }
             System.out.println("visiteur peut visiter " + nombreEnclos);
-
-
-
-//            for (int j = 0; j < lesEnclos.length; j++) {
-//                if ( visiteur.getEspeces()[0] )
-//            }
         }
 
         if (visiteur.getAge() < 12) {
@@ -46,11 +45,6 @@ public class Entree {
         else if (visiteur.getAge() >= 65) {
             prix /= 2;
         }
-
-//        if ( == null) {
-//
-//        }
-
     }
 
     public int getNombreEnclos() {
@@ -66,7 +60,17 @@ public class Entree {
     }
 
     public void afficherEnclos() {
-
+        String str = "";
+        str += "Ce billet permettra de visiter " + nombreEnclos + " enclos: ";
+        for (int i = 0; i < nombreEnclos; i++) {
+            if (i == nombreEnclos - 1) {
+                str += lesEnclos[i].getNom();
+            }
+            else {
+                str += lesEnclos[i].getNom() + ", ";
+            }
+        }
+        System.out.println(str);
     }
 
     public void ajouterEnclos(Enclos enclos) {

@@ -108,7 +108,24 @@ public class Zoo {
 
     @Override
     public String toString() {
-        return "" + pileGardiens + fileVisiteurs + "\n" + "Le zoo est peuplé avec " + nombreTotalAnimaux + " animaux. Il y a " + nombreEnclos + " enclos" + ", lesEnclos=" + Arrays.toString(lesEnclos) + '}';
+        String str = "";
+        str += "" + pileGardiens + fileVisiteurs + "\n" + "Le zoo est peuplé avec " + nombreTotalAnimaux + " animaux. Il y a " + nombreEnclos + " enclos.\n";
+        for (int i = 0; i < nombreEnclos; i++) {
+            str += lesEnclos[i];
+        }
+        return str;
+    }
+
+    public int getNombreEnclos() {
+        return nombreEnclos;
+    }
+
+    public Enclos[] getLesEnclos() {
+        return lesEnclos;
+    }
+
+    public String getNom() {
+        return nom;
     }
 
     //toString

@@ -28,7 +28,19 @@ public class Enclos {
     }
 
     public void ajouterAnimaux(Animal[] lesAnimaux) {
+//        for (int i = 0; i < animaux.length; i++) {
+//            if (lesAnimaux[i] == lesAnimaux[i]) {
+//                break;
+//            } else if (animaux[i] == null) {
+//                lesEnclos[i] = zoo.getLesEnclos()[i];
+//                prix += lesEnclos[i].getNombreAnimaux() + 10;
+//                nombreEnclos++;
+//                break;
+//            }
+//        }
         animaux = lesAnimaux;
+        nombreAnimaux = animaux.length;
+        System.out.println("number of animals in this enclos: " + animaux.length);
     }
 
     public int getNombreAnimaux() {
@@ -38,31 +50,12 @@ public class Enclos {
     public Animal[] getAnimaux() {
         return animaux;
     }
-
-
-//    @Override
-//    public String toString() {
-//        return "Enclos{" +
-//                "nom='" + nom + '\'' +
-//                ", nombreAnimaux=" + nombreAnimaux +
-//                ", capaciteMax=" + capaciteMax +
-//                ", animaux=" + Arrays.toString(animaux) +
-//                ", veterinaire=" + veterinaire +
-//                ", gardien=" + gardien +
-//                '}';
-//    }
-//    @Override
-//    public String toString() {
-//        return "Enclos{" + "nom='" + nom + '\'' + ", nombreAnimaux=" + nombreAnimaux + ", capaciteMax=" + capaciteMax + ", animaux=" + Arrays.toString(animaux) + ", veterinaire=" + veterinaire + ", gardien=" + gardien + '}';
-//    }
     @Override
     public String toString() {
-        return "L'enclos '" + nom + "' est peuplé avec " + nombreAnimaux + " animaux. Sa capacité est de " + capaciteMax + ". Le veterinaire assigné est " + veterinaire + ". Le gardien actuel est " + gardien + ".\n" + "Les animaux dans cet enclos:\n" + Arrays.toString(animaux);
+        return "/*****guardian inside enclos: " + gardien + ".*********\n" + "L'enclos '" + nom + "' est peuplé avec " + nombreAnimaux + " animaux. Sa capacité est de " + capaciteMax + ". Le veterinaire assigné est " + veterinaire + ". Le gardien actuel est " + gardien + ".\n" + "Les animaux dans cet enclos:\n" + Arrays.toString(animaux);
     }
 
     public String getNom() {
         return nom;
     }
-    //toString
-
 }
