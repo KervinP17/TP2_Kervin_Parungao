@@ -82,11 +82,15 @@ public class Zoo {
             pointTotal += pileGardiens.getGardiens()[i].getCompetence();
         }
         if ( pointTotal - pileGardiens.getElement(getPileGardiens().getNbElements() - 1).getCompetence() < 20 ) {
+            System.out.println("on ne peut pas enlever");
             return null;
         }
-            System.out.println("On retire le dernier gardien arrivé au zoo: " + pileGardiens.getElement(getPileGardiens().getNbElements() - 1));
-            temp = pileGardiens.getElement(getPileGardiens().getNbElements() - 1);
-            pileGardiens.setNbElements(pileGardiens.getNbElements() - 1);
+        System.out.println("On retire le dernier gardien arrivé au zoo: " + pileGardiens.getElement(getPileGardiens().getNbElements() - 1));
+        temp = pileGardiens.getElement(getPileGardiens().getNbElements() - 1);
+        pileGardiens.setElement(getPileGardiens().getNbElements() - 1, null);
+        pileGardiens.setNbElements(pileGardiens.getNbElements() - 1);
+
+        System.out.println("testestestestes:     " + pileGardiens);
         return temp;
     }
 

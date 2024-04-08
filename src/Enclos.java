@@ -19,6 +19,7 @@ public class Enclos {
         if ( gardien == null ) {
             return null;
         }
+        System.out.println("gardien responsible for " + nom + " is: " + gardien);
         return gardien;
     }
 

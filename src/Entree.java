@@ -8,8 +8,7 @@ public class Entree {
 
         for (int i = 0; i < 5; i++) { // temp 5 ////////////////////////////
 //            for (int j = 0; j < lesEnclos.length; j++) {
-
-
+//                if ( visiteur.getEspeces()[0] )
 //            }
         }
 

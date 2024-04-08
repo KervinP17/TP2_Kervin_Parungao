@@ -16,7 +16,7 @@ public class Visiteur {
     }
 
     public void entrerDansZoo(Zoo zoo) {
-
+        System.out.println(this.nom + " entre dans le zoo " + zoo);
     }
 
     public void entrerDansEnclo(Enclos enclo) {

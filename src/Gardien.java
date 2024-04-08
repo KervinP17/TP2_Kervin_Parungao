@@ -2,13 +2,17 @@ public class Gardien {
     private String nom;
     private int competence;
     private int id;
+    private static int idDisponible = 999;
     public static Pile pileGardien = new Pile();
 
     public Gardien(String nom, int competence) {
         this.nom = nom;
         this.competence = competence;
+        idDisponible++;
+        id = idDisponible;
 
         compteurGardiens++;
+
         pointageTotalGardiens += competence;
         pileGardien.insererALaFin(this);
 
@@ -49,7 +53,7 @@ public class Gardien {
 
     @Override
     public String toString() {
-        return "[" + nom + ", " + competence + "] ";
+        return "[" + nom + ", " + id + ", " + competence + "] ";
     }
 
     //toString

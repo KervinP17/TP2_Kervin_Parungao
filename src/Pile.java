@@ -28,6 +28,9 @@ public class Pile {
     public Gardien getElement(int index) {
         return gardiens[index];
     }
+    public void setElement(int index, Gardien gardien) {
+         this.gardiens[index] = gardien;
+    }
 
     public void setNbElements(int nbElements) {
         this.nbElements = nbElements;
@@ -50,9 +53,9 @@ public class Pile {
         gardiens = temp;
     }
 
-    public void setGardiens(Gardien[] gardiens) {
-        this.gardiens = gardiens;
-    }
+//    public void setGardiens(Gardien[] gardiens) {
+//        this.gardiens = gardiens;
+//    }
 
     public void afficher() {
         System.out.println("Voici la pile des gardiens:");
