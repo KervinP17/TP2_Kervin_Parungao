@@ -3,7 +3,7 @@ public class Gardien {
     private int competence;
     private int id;
     private static int idDisponible = 999;
-    public static Pile pileGardien = new Pile();
+    public static Pile pileGardien = new Pile(); // Pas capable de la mettre private. Ne sait pas comment la modifier et l'accéder sans la mettre publique (mutateur ne marche pas).
 
     public Gardien(String nom, int competence) {
         this.nom = nom;
@@ -31,6 +31,10 @@ public class Gardien {
         return pileGardien;
     }
 
+    public static void setPointageTotalGardiens(int pointageTotalGardiens) {
+        Gardien.pointageTotalGardiens = pointageTotalGardiens;
+    }
+
     public void entrainerAnimal(Animal animal, double temps) {
         double poids = animal.getPoids();
         if ( temps < 10 ) {
@@ -42,6 +46,9 @@ public class Gardien {
         else {
             animal.setPoids(poids * 0.95);
         }
+        temps = (double) Math.round(temps * 10) / 10;
+        competence++;
+        System.out.println("Le Gardien " + nom + " entraine l'animal " + animal.getNom() + " " + temps + " minutes et augmente sa propre compétence.");
     }
 
     public int getCompetence() {
@@ -55,7 +62,4 @@ public class Gardien {
     public String toString() {
         return "[" + nom + ", " + id + ", " + competence + "] ";
     }
-
-    //toString
-
 }

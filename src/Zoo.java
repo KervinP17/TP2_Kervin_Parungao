@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class Zoo {
     private String nom;
     private Pile pileGardiens;
@@ -74,33 +72,32 @@ public class Zoo {
         pileGardiens.insererALaFin(gardien);
     }
 
-    public Gardien retirerGardien() {
-        int pointTotal = 0;
+    public void retirerGardien() {
+        System.out.println("xp total avant: " + Gardien.getPointageTotalGardiens() + " points" );
         Gardien temp = null;
 
-        for (int i = 0; i < pileGardiens.getNbElements(); i++) {
-            pointTotal += pileGardiens.getGardiens()[i].getCompetence();
-        }
-        if ( pointTotal - pileGardiens.getElement(getPileGardiens().getNbElements() - 1).getCompetence() < 20 ) {
-            System.out.println("on ne peut pas enlever");
-            return null;
+        if ( Gardien.getPointageTotalGardiens() - pileGardiens.getElement(getPileGardiens().getNbElements() - 1).getCompetence() < 20 ) {
+            System.out.println("On ne peut enlever le gardien " + pileGardiens.getElement(getPileGardiens().getNbElements() - 1) + " parce que les points\n" +
+                    "d'expérience < 20");
+            return;
         }
         System.out.println("On retire le dernier gardien arrivé au zoo: " + pileGardiens.getElement(getPileGardiens().getNbElements() - 1));
+        Gardien.setPointageTotalGardiens(Gardien.getPointageTotalGardiens() - pileGardiens.getElement(getPileGardiens().getNbElements() - 1).getCompetence());
         temp = pileGardiens.getElement(getPileGardiens().getNbElements() - 1);
         pileGardiens.setElement(getPileGardiens().getNbElements() - 1, null);
         pileGardiens.setNbElements(pileGardiens.getNbElements() - 1);
 
-        System.out.println("testestestestes:     " + pileGardiens);
-        return temp;
+        System.out.println("xp total apres: " + Gardien.getPointageTotalGardiens() + " points" );/// 23423423423
+        System.out.println("testestestestes:     " + pileGardiens); ///234234234
     }
 
     public File getFileVisiteurs() {
         return fileVisiteurs;
     }
 
-    public void setPileGardiens(Pile pileGardiens) {
-        this.pileGardiens = pileGardiens;
-    }
+//    public void setPileGardiens(Pile pileGardiens) {
+//        this.pileGardiens = pileGardiens;
+//    }
 
     public Pile getPileGardiens() {
         return pileGardiens;

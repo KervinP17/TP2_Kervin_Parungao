@@ -52,7 +52,7 @@ public class Enclos {
     }
     @Override
     public String toString() {
-        return "/*****guardian inside enclos: " + gardien + ".*********\n" + "L'enclos '" + nom + "' est peuplé avec " + nombreAnimaux + " animaux. Sa capacité est de " + capaciteMax + ". Le veterinaire assigné est " + veterinaire + ". Le gardien actuel est " + gardien + ".\n" + "Les animaux dans cet enclos:\n" + Arrays.toString(animaux);
+        return "L'enclos '" + nom + "' est peuplé avec " + nombreAnimaux + " animaux. Sa capacité est de " + capaciteMax + ". Le veterinaire assigné est " + veterinaire + ". Le gardien actuel est " + gardien + ".\n" + "Les animaux dans cet enclos:\n" + Arrays.toString(animaux);
     }
 
     public String getNom() {

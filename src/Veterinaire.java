@@ -8,7 +8,9 @@ public class Veterinaire {
     }
 
     public void soignerAnimal(Animal animal) {
+
         animal.getRegimeAlimentaire();
+        System.out.println("Le Vétérinaire " + nom + " a récalculé les besoins alimentaires de l'animal " + animal);
     }
 
     @Override

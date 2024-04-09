@@ -61,7 +61,11 @@ public class Animal {
     }
     @Override
     public String toString() {
-        return "-----Le " + espece + " nommé " + nom + " pèse " + poids + " kg et son besoin alimentaire " + besoinAlimentaire + " de " + regimeAlimentaire + "\n";
+        return "-----Le " + espece + " nommé " + nom + " pèse " + poids + " kg et son besoin alimentaire " + regimeAlimentaire + " de " +  besoinAlimentaire + " kg." + "\n";
+    }
+
+    public String getNom() {
+        return nom;
     }
     //toString
 }
