@@ -69,7 +69,6 @@ public class Zoo {
     }
 
     public void ajouterGardien(Gardien gardien) {
-        pileGardiens.insererALaFin(gardien);
     }
 
     public void retirerGardien() {
