@@ -15,6 +15,14 @@ public class Visiteur {
         return especes;
     }
 
+    public int getAge() {
+        return age;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
     public void entrerDansZoo(Zoo zoo) {
         System.out.println(this.nom + " entre dans le zoo '" + zoo.getNom() + "'");
     }
@@ -24,11 +32,11 @@ public class Visiteur {
     }
 
     public void quitterZoo() {
-
+        System.out.println(this.nom + " quitte le zoo.");
     }
 
     public void quitterEnclo(Enclos enclo) {
-
+        System.out.println(this.nom + " quitte l'enclos '" + enclo.getNom() + "'." );
     }
 
     @Override
@@ -36,11 +44,5 @@ public class Visiteur {
         return "[" + nom + ", " + age + "]";
     }
 
-    public int getAge() {
-        return age;
-    }
 
-    public String getNom() {
-        return nom;
-    }
 }

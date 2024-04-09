@@ -4,11 +4,9 @@ public class File {
 
     public boolean estVide() {
         if ( premier == null ) {
-            System.out.println("vide");
             return true;
         }
         else {
-            System.out.println("pas vide");
             return false;
         }
     }
@@ -21,13 +19,6 @@ public class File {
         return premier;
     }
 
-    public void setPremier(Noeud premier) {
-        this.premier = premier;
-    }
-    public void setNbElements(int nbElements) {
-        this.nbElements = nbElements;
-    }
-
     public Noeud getNoeud(int index) {
         if ( index < 0 || index >= nbElements ) {
             return null;
@@ -37,6 +28,13 @@ public class File {
             courant = courant.suivant;
         }
         return courant;
+    }
+
+    public void setPremier(Noeud premier) {
+        this.premier = premier;
+    }
+    public void setNbElements(int nbElements) {
+        this.nbElements = nbElements;
     }
 
     public int insererAuDebut(Visiteur valeur) {
@@ -72,7 +70,7 @@ public class File {
         Noeud avant = getNoeud(index - 1);
         if ( avant == null ) {
             return;
-        } // redundant??????????????????????????????????????????????????????????????
+        }
 
         Noeud apres = avant.suivant;
         Noeud nouveau = new Noeud(valeur);
@@ -88,14 +86,4 @@ public class File {
         str += "[null]";
         return str;
     }
-
-
-
-//    public String toString() {
-//        StringBuilder str = new StringBuilder();
-//        for (Noeud courant = premier; courant != null; courant = courant.suivant)
-//            str.append(courant.getValeur()).append(" -> ");
-//        str.append("[null]");
-//        return str.toString();
-//    }
 }

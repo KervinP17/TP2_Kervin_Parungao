@@ -15,8 +15,6 @@ public class Gardien {
 
         pointageTotalGardiens += competence;
         pileGardien.insererALaFin(this);
-
-//        System.out.println("apile " + pileGardien);
     }
 
     public static int getCompteurGardiens() {
@@ -30,6 +28,13 @@ public class Gardien {
     public static Pile getPileGardien() {
         return pileGardien;
     }
+
+    public int getCompetence() {
+        return competence;
+    }
+
+    private static int compteurGardiens = 0;
+    private static int pointageTotalGardiens = 0;
 
     public static void setPointageTotalGardiens(int pointageTotalGardiens) {
         Gardien.pointageTotalGardiens = pointageTotalGardiens;
@@ -50,13 +55,6 @@ public class Gardien {
         competence++;
         System.out.println("Le Gardien " + nom + " entraine l'animal " + animal.getNom() + " " + temps + " minutes et augmente sa propre compétence.");
     }
-
-    public int getCompetence() {
-        return competence;
-    }
-
-    private static int compteurGardiens = 0;
-    private static int pointageTotalGardiens = 0;
 
     @Override
     public String toString() {

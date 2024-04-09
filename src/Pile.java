@@ -11,10 +11,6 @@ public class Pile {
         gardiens = new Gardien[TAILLE_INITIALE];
         nbElements = 0;
         capacite = TAILLE_INITIALE;
-
-//        System.out.println("size of guardisands is " + gardiens.length);
-//        System.out.println("gardien 1 is " + gardiens[0]);
-//        System.out.println("actual gardien size rn is " + Gardien.getCompteurGardiens());
     }
 
     public Gardien[] getGardiens() {
@@ -53,10 +49,6 @@ public class Pile {
         gardiens = temp;
     }
 
-//    public void setGardiens(Gardien[] gardiens) {
-//        this.gardiens = gardiens;
-//    }
-
     public void afficher() {
         System.out.println("Voici la pile des gardiens:");
         System.out.print( nbElements + " Gardiens (capacité " + capacite + "): " );
@@ -79,17 +71,7 @@ public class Pile {
             }
             else str += "[null] ";
         }
-        System.out.println("");
-
         return str;
     }
 
-    // toSring
-
-//    @Override
-//    public String toString() {
-//        return "Pile{" +
-//                "gardiens=" + Arrays.toString(gardiens) +
-//                '}';
-//    }
 }

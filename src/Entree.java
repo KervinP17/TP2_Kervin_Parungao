@@ -10,12 +10,9 @@ public class Entree {
 
         for (int i = 0; i < zoo.getNombreEnclos(); i++) {
             for (int j = 0; j < zoo.getLesEnclos()[i].getAnimaux().length; j++) {
-//                System.out.println(zoo.getLesEnclos()[i].getAnimaux()[j]);
+
                 for (int k = 0; k < visiteur.getEspeces().length; k++) {
                     if (visiteur.getEspeces()[k].equals(zoo.getLesEnclos()[i].getAnimaux()[j].getEspece())) {
-                        System.out.println( visiteur.getEspeces()[k] + " == " + zoo.getLesEnclos()[i].getAnimaux()[j].getEspece() + " that is inside " + zoo.getLesEnclos()[i].getNom() );
-                        System.out.println("number of animals inside enclos: " + zoo.getLesEnclos()[i].getNombreAnimaux());
-
                         for (int l = 0; l < zoo.getNombreEnclos(); l++) {
                             if (lesEnclos[l] == zoo.getLesEnclos()[i]) {
                                 break;
@@ -26,14 +23,10 @@ public class Entree {
                                 nombreEnclos++;
                                 break;
                             }
-
-                            System.out.println("visiteur peut visiter " + zoo.getLesEnclos()[i].getNom());
-
                         }
                     }
                 }
             }
-            System.out.println("visiteur peut visiter " + nombreEnclos);
         }
 
         if (visiteur.getAge() < 12) {

@@ -10,27 +10,10 @@ public class Zoo {
         this.nom = nom;
         fileVisiteurs = new File();
         pileGardiens = Gardien.pileGardien;
-//        pileGardiens.afficher();
-//        System.out.println(pileGardiens);
-//        System.out.println(fileVisiteurs);
-        System.out.println(this); //temp=======================================================================
+        System.out.println(this);
     }
 
-    //JUNIT?
     public boolean ajouterEnclos(Enclos[] lesEnclos) {
-
-//        int pointTotal = 0;
-
-//        for (int i = 0; i < pileGardiens.getNbElements(); i++) {
-//            pointTotal += pileGardiens.getGardiens()[i].getCompetence();
-//        }
-//        System.out.println("point total is " + pointTotal);
-//        if ( pointTotal < 20 ) {
-//
-//            return false;
-//        }
-
-//        System.out.println("point total is " + Gardien.getPointageTotalGardiens());
         if ( Gardien.getPointageTotalGardiens() < 20 ) {
             return false;
         }
@@ -65,14 +48,12 @@ public class Zoo {
         else {
             fileVisiteurs.insererALaFin(visiteur);
         }
-//        System.out.println(fileVisiteurs); // printVisiteurs//////////////////////////////////////
     }
 
     public void ajouterGardien(Gardien gardien) {
     }
 
     public void retirerGardien() {
-        System.out.println("xp total avant: " + Gardien.getPointageTotalGardiens() + " points" );
         Gardien temp = null;
 
         if ( Gardien.getPointageTotalGardiens() - pileGardiens.getElement(getPileGardiens().getNbElements() - 1).getCompetence() < 20 ) {
@@ -86,30 +67,14 @@ public class Zoo {
         pileGardiens.setElement(getPileGardiens().getNbElements() - 1, null);
         pileGardiens.setNbElements(pileGardiens.getNbElements() - 1);
 
-        System.out.println("xp total apres: " + Gardien.getPointageTotalGardiens() + " points" );/// 23423423423
-        System.out.println("testestestestes:     " + pileGardiens); ///234234234
     }
 
     public File getFileVisiteurs() {
         return fileVisiteurs;
     }
 
-//    public void setPileGardiens(Pile pileGardiens) {
-//        this.pileGardiens = pileGardiens;
-//    }
-
     public Pile getPileGardiens() {
         return pileGardiens;
-    }
-
-    @Override
-    public String toString() {
-        String str = "";
-        str += "" + pileGardiens + fileVisiteurs + "\n" + "Le zoo est peuplé avec " + nombreTotalAnimaux + " animaux. Il y a " + nombreEnclos + " enclos.\n";
-        for (int i = 0; i < nombreEnclos; i++) {
-            str += lesEnclos[i];
-        }
-        return str;
     }
 
     public int getNombreEnclos() {
@@ -124,5 +89,15 @@ public class Zoo {
         return nom;
     }
 
-    //toString
+    @Override
+    public String toString() {
+        String str = "";
+        str += "" + pileGardiens + fileVisiteurs + "\n" + "Le zoo est peuplé avec " + nombreTotalAnimaux + " animaux. Il y a " + nombreEnclos + " enclos.\n";
+        for (int i = 0; i < nombreEnclos; i++) {
+            str += lesEnclos[i];
+        }
+        return str;
+    }
+
+
 }
